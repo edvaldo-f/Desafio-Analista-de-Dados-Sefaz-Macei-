@@ -45,7 +45,7 @@ desktop.ini
 # Sobre as SAÍDAS do seu trabalho (dados extraídos, Parquet, gráficos):
 # fica a seu critério versioná-las ou não. Se preferir não subir os
 # arquivos intermediários pesados, descomente as linhas abaixo:
-# dados_extraidos/
-# *.parquet
+dados_extraidos/
+*.parquet
 # saidas/
 # ==========================================================================
