@@ -46,6 +46,7 @@ desktop.ini
 # fica a seu critério versioná-las ou não. Se preferir não subir os
 # arquivos intermediários pesados, descomente as linhas abaixo:
 dados_extraidos/
+dados_processados/
 *.parquet
 # saidas/
 # ==========================================================================
