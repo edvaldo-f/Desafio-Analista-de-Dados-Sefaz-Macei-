@@ -47,6 +47,7 @@ desktop.ini
 # arquivos intermediários pesados, descomente as linhas abaixo:
 dados_extraidos/
 dados_processados/
+dados_otimizados/
 *.parquet
 # saidas/
 # ==========================================================================
