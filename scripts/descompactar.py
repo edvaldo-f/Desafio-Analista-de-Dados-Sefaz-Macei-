@@ -1,4 +1,5 @@
-## Script para descompactar os arquivos em dados_compactados/, Passo 1 do desafio.
+# Passo 1 do desafio.
+# Script para descompactar os arquivos em dados_compactados/
 
 import zipfile
 from pathlib import Path
@@ -10,7 +11,7 @@ raiz_do_projeto = Path(__file__).parent.parent
 pasta_origem = raiz_do_projeto / "dados_compactos"
 pasta_destino = raiz_do_projeto / "dados_extraidos"
 
-# Laço para encontrar os arquivos zip e extraí-los na devida pasta.
+# Laço para encontrar os arquivos .zip e extraí-los na devida pasta.
 for zip_file in pasta_origem.rglob("*.zip"):
     with zipfile.ZipFile(zip_file, 'r') as zip_ref:
         pasta_final = pasta_destino / zip_file.parent.name

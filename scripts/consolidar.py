@@ -1,4 +1,5 @@
-### Script para ler e consolidar os arquivos em dados_extraidos/, Passo 2 do desafio.
+# Passo 2 do desafio.
+# Script para ler e consolidar os arquivos em dados_extraidos/ 
 
 import pandas as pd
 import numpy as np
@@ -10,8 +11,7 @@ pasta_extraidos = raiz_do_projeto / "dados_extraidos"
 
 # Nova pasta para os dados tratados.
 pasta_processados = raiz_do_projeto / "dados_processados"
-# Cria a pasta se não existir
-pasta_processados.mkdir(parents=True, exist_ok=True) 
+pasta_processados.mkdir(parents=True, exist_ok=True) # Cria a pasta se não existir
 
 # Lista para guardar os DataFrames.
 lista_dfs = []
@@ -31,10 +31,12 @@ for caminho_csv in pasta_extraidos.rglob("*.csv"):
         thousands="."
         )
     
+    # Foram adicionados algumas sugestões do README, afim de melhorar as análises e organização do DataFrame.
+    
     # Sugestão: Adição da coluna "ano" ao DataFrame.
     df_ano["Ano"] = ano_dado
     
-    # Sugestão: Adição da coluna que diferencia "função" de "subfunção" ao DataFrame.
+    # Sugestão: Adição da coluna que diferencia "função" de "subfunção" do DataFrame.
     codigo_conta = df_ano["Conta"].str.split(" - ").str[0].str.strip()
     
     condicoes = [
@@ -51,7 +53,6 @@ for caminho_csv in pasta_extraidos.rglob("*.csv"):
     # Fim do laço, adicionando a lista de DataFrames.
     lista_dfs.append(df_ano)
 
-print("Consolidação dos dados concluída.")
 # Concatenando todos os DataFrames em um único DataFrame.
 df_consolidado = pd.concat(lista_dfs, ignore_index=True)
 
@@ -63,4 +64,3 @@ df_consolidado.to_csv(caminho_saida,
                       encoding="latin-1", 
                       decimal=",", 
                       float_format="%.2f")
-print(f"Processo finalizado, arquivo salvo em {caminho_saida}.")
