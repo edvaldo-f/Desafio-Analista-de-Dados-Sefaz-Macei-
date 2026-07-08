@@ -25,7 +25,7 @@ Para esse projeto, foram utilizados:
 * O arquivo `main.py` foi criado para facilitar a geração da base de dados utilizada nas análises finais por eventuais interessados.
 
 ### Porque foi utilizado o formato Parquet?
-    Para essa resolução, o formato Parquet foi o adotado pela sua compactação dos dados, permitindo um armazenamento melhor. Tal formato é amplamente usado para facilitar o armazenamento de conjuntos de dados afim de economizar armazenamento e tempo de leitura, visto que ele organiza os arquivos em colunas ao invés de linhas, oque também permite queries analíticas melhores.
+Para essa resolução, o formato Parquet foi o adotado pela sua compactação dos dados, permitindo um armazenamento melhor. Tal formato é amplamente usado para facilitar o armazenamento de conjuntos de dados afim de economizar armazenamento e tempo de leitura, visto que ele organiza os arquivos em colunas ao invés de linhas, oque também permite queries analíticas melhores.
 
 ## ⚙️ Como executar?
 
