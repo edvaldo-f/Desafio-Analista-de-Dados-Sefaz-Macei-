@@ -7,7 +7,7 @@ from pathlib import Path
 """
 ==========================================================
 Para essa otimização, será usado a conversão para o formato Parquet.
-Justificativas no RESOLUCAO.md.    
+Justificativas no README.    
 ==========================================================
 """
 
