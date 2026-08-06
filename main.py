@@ -3,30 +3,33 @@
 import subprocess
 import sys
 import time
+from pathlib import Path
 
 # Esta função executa os arquivos na pasta scripts/ na ordem correta.
-def executar_script (arquivo_script):
-    print(f"Executando script {arquivo_script}...")
+def executar_script (arquivo_script: Path):
+    caminho_str = str(arquivo_script)
+    print(f"Executando script {caminho_str}...")
     tempo_inicial = time.time()
 
-    resultado = subprocess.run([sys.executable, arquivo_script])
+    resultado = subprocess.run([sys.executable, caminho_str])
 
     # Tratamento de erros, se o algum script falhar.
     if resultado.returncode == 0:
         tempo_final = time.time()
         duracao = tempo_final - tempo_inicial
-        print(f"✅ {arquivo_script} concluído! (Tempo: {duracao:.2f}s)\n")
+        print(f"[SUCESSO] {arquivo_script.name} concluido! (Tempo: {duracao:.2f}s)\n")
     else:
-        print(f"❌ Erro no script {arquivo_script}. Processo interrompido automaticamente.")
+        print(f"[ERRO] Erro no script {arquivo_script.name}. Processo interrompido automaticamente.")
         sys.exit(1)
     
 if __name__ == "__main__":
-    print("🚀 Iniciada a preparação de dados.")
+    print("Iniciada a preparacao de dados.")
     print("=" * 50 + "\n")
 
+    pasta_scripts = Path("scripts")
     # Ordem dos scripts
-    executar_script("scripts\descompactar.py")
-    executar_script("scripts\consolidar.py")
-    executar_script("scripts\otimizar_formato.py")
+    executar_script(pasta_scripts / "descompactar.py")
+    executar_script(pasta_scripts / "consolidar.py")
+    executar_script(pasta_scripts / "otimizar_formato.py")
 
-    print("🎉 Sucesso! Os scripts foram executados e a base de dados está pronta para ser utilizada.")
+    print("Sucesso! Os scripts foram executados e a base de dados esta pronta para ser utilizada.")
